@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth</title>
+    <style>
+#earth {
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("http://3.bp.blogspot.com/_wZTCU0dAc5k/S-VfW1PsupI/AAAAAAAAAD8/dHeqzcokZwc/s1600/google+earth.JPG");
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+}
+
+    </style>
+<script>
+    zone = "Latitude"
+    setInterval(function(){
+        document.getElementById("earth").style.backgroundPositionX=document.getElementById("spinnerX").value+"%";
+        document.getElementById("earth").style.backgroundPositionY=document.getElementById("spinnerY").value+"%";
+        if(zone==="Latitude"){
+        document.getElementById("spinnerX").disabled = false;
+
+            if(document.getElementById("spinnerY").value>=57){
+        document.getElementById("latlong").style.marginTop=57-document.getElementById("spinnerY").value+"%";
+        }
+       else{
+        document.getElementById("latlong").style.marginTop=62-document.getElementById("spinnerY").value+"%";
+       }
+    }
+    else if(zone==="Longitude"){
+        document.getElementById("latlong").style.marginTop="50%"
+        document.getElementById("spinnerX").disabled = true;
+
+    }},100)
+</script>
+
+</head>
+
+<body>
+   <div id="contain">
+      <center><H1>Latitudes And Longitudes Of Earth</H1></center>
+<input type="range" id="spinnerX" min="0" max="100" value="50" style="position: absolute;bottom: 5%;left:45%"> 
+<input type="range" id="spinnerY" min="0" max="105" value="75" style="position:absolute;transform:rotate(90deg);top:50%;right:5%"> 
+
+
+    <div id="earth">
+<div id="latlong" style="position: relative;">
+    <div id="on1">
+        <hr style="margin-top: 5%;"><h2 style="margin-top:-10px;margin-left: 22.5%;color: white;position: absolute;" id="1st">Tropic of Arctic Circle</h2><h2 id="no1" style="margin-top:10px;margin-left: 47%;color: white;position: absolute;">66.5 &deg; N</h2>
+        </div><div id="on2">
+        <hr style="margin-top: 46%;"><h2 style="margin-top:-10px;margin-left: 28%;color: white;position: absolute;" id="2nd">Tropic Of Cancer</h2><h2 id="no2" style="margin-top:10px;margin-left: 47%;color: white;position: absolute;">23.5 &deg; N</h2>
+        </div><div id="change">
+        <hr style="margin-top: 18%;" color=gold><h2 style="margin-top:-10px;margin-left: 40%;color: white;position: absolute;" id="ch">Equator</h2><h2  style="margin-top:10px;margin-left: 50%;color: white;position: absolute;">0 &deg;</h2>
+    </div>    <div id="on3">
+        <hr style="margin-top: 18%;"><h2 style="margin-top:-10px;margin-left: 25%;color: white;position: absolute;" id="3rd">Tropic Of Capricon</h2><h2 id="no3" style="margin-top:10px;margin-left: 47%;color: white;position: absolute;">23.5 &deg; S</h2>
+</div><div id="on">
+        <hr style="margin-top:42.5%;"><h2 style="margin-top:-10px;margin-left: 22.5%;color: white;position: absolute;" id="4th">Tropic Of Antarctic Circle</h2><h2 id="no4" style="margin-top:10px;margin-left: 47%;color: white;position: absolute;">66.5 &deg; S</h2>
+    </div>   
+    </div>
+        </div>
+<div style="position: absolute;margin-top: 15%;text-align: center;position: absolute;bottom: 10%;left:42.5%">
+<button onclick="
+document.getElementById('latlong').style='transform:rotate(0);'
+document.getElementById('on').style.display='block'
+document.getElementById('on1').style.display='block'
+document.getElementById('on2').style.display='block'
+document.getElementById('on3').style.display='block'
+document.getElementById('ch').innerHTML='Equator'
+document.getElementById('spinnerX').value=50
+zone = 'Latitude'
+
+">See Latitudes</button>
+<button onclick="
+document.getElementById('latlong').style='transform:rotate(-89.5deg);'
+document.getElementById('on').style.display='none'
+document.getElementById('on1').style.display='none'
+document.getElementById('on2').style.display='none'
+document.getElementById('on3').style.display='none'
+document.getElementById('ch').innerHTML='Prime Meridian'
+document.getElementById('spinnerX').value=34
+zone = 'Longitude'
+
+
+">See Longitudes</button>
+    </div>
+    </div>
+
+       
+<script>
+
+</script>
+    </body>
+</html>
