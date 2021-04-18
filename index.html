@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earth</title>
+    <title>🌎 Earth 🌎</title>
     <style>
 #earth {
   width: 400px;
@@ -46,11 +46,11 @@
 
 </head>
 
-<body>
+<body onload="god()">
    <div id="contain">
       <center><H1>Latitudes And Longitudes Of Earth</H1></center>
-<input type="range" id="spinnerX" min="0" max="100" value="50" style="position: absolute;bottom: 5%;left:45%"> 
-<input type="range" id="spinnerY" min="0" max="105" value="75" style="position:absolute;transform:rotate(90deg);top:50%;right:5%"> 
+<input type="range" id="spinnerX" min="0" max="100" value="50" style="position: absolute"> 
+<input type="range" id="spinnerY" min="0" max="105" value="75" style="transform:rotate(90deg);top:50%;"> 
 
 
     <div id="earth">
@@ -68,7 +68,7 @@
     </div>   
     </div>
         </div>
-<div style="position: absolute;margin-top: 15%;text-align: center;position: absolute;bottom: 10%;left:42.5%">
+<div id="local">
 <button onclick="
 document.getElementById('latlong').style='transform:rotate(0);'
 document.getElementById('on').style.display='block'
@@ -97,7 +97,13 @@ zone = 'Longitude'
 
        
 <script>
-
+    function god(){
+    document.getElementById("spinnerY").style.marginLeft=document.getElementById("earth").offsetLeft+document.getElementById("earth").offsetWidth+40
+document.getElementById("spinnerY").style.marginTop=document.getElementById("earth").offsetTop+document.getElementById("earth").offsetWidth/3
+document.getElementById("spinnerX").style.marginLeft=document.getElementById("earth").offsetLeft+document.getElementById("earth").offsetWidth/2-document.getElementById("spinnerX").offsetWidth/2
+document.getElementById("spinnerX").style.marginTop=document.getElementById("earth").offsetTop+document.getElementById("earth").offsetHeight
+document.getElementById("local").style.marginTop-=document.getElementById("earth").offsetTop+document.getElementById("earth").offsetHeight/4
+    }
 </script>
     </body>
 </html>
