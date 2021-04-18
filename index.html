@@ -48,7 +48,7 @@
 
 <body onload="god()">
    <div id="contain">
-      <center><H1>Latitudes And Longitudes Of Earth</H1></center>
+      <center><H1 id="title">Latitudes And Longitudes Of Earth</H1></center>
 <input type="range" id="spinnerX" min="0" max="100" value="50" style="position: absolute"> 
 <input type="range" id="spinnerY" min="0" max="105" value="75" style="transform:rotate(90deg);top:50%;"> 
 
@@ -68,7 +68,7 @@
     </div>   
     </div>
         </div>
-<div id="local">
+<div id="local" style="display: flex;">
 <button onclick="
 document.getElementById('latlong').style='transform:rotate(0);'
 document.getElementById('on').style.display='block'
@@ -103,6 +103,9 @@ document.getElementById("spinnerY").style.marginTop=document.getElementById("ear
 document.getElementById("spinnerX").style.marginLeft=document.getElementById("earth").offsetLeft+document.getElementById("earth").offsetWidth/2-document.getElementById("spinnerX").offsetWidth/2
 document.getElementById("spinnerX").style.marginTop=document.getElementById("earth").offsetTop+document.getElementById("earth").offsetHeight
 document.getElementById("local").style.marginTop-=document.getElementById("earth").offsetTop+document.getElementById("earth").offsetHeight/4
+document.getElementById("local").style.marginLeft=document.getElementById("earth").offsetLeft+document.getElementById("earth").offsetHeight/4
+
+
     }
 </script>
     </body>
